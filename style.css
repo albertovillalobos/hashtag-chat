@@ -5,3 +5,114 @@ body {
   justify-content: center;
   flex-direction: column;
 }
+
+
+.AppContainer {
+  justify-content: center;
+  /*box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);*/
+}
+
+.ChannelBar {
+  display: flex;
+  justify-content: center;
+  /*padding: 10px 25px;*/
+  /*border-bottom: 1px solid #ededed;*/
+  font-size: 24px;
+  font-weight: 300;
+  color: rgb(77, 77, 77);
+  -webkit-font-smoothing: antialiased;
+  /*box-shadow: none;*/
+  /*border: none;*/
+  /*border-bottom: 1px solid #ededed;*/
+  margin-bottom: 20px;
+}
+
+.ChannelBar input {
+  justify-content: center;
+  font-size: 1em;
+  padding: 5px;
+  box-shadow: none;
+  border: none;
+}
+
+.ChannelBar input::-webkit-input-placeholder {
+	font-style: italic;
+	font-weight: 300;
+	color: #e6e6e6;
+}
+
+.ChannelBar input::-moz-placeholder {
+	font-style: italic;
+	font-weight: 300;
+	color: #e6e6e6;
+}
+
+.ChannelBar input::input-placeholder {
+	font-style: italic;
+	font-weight: 300;
+	color: #e6e6e6;
+}
+
+
+
+.CommentList {
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.Comment{
+  padding: 10px 25px;
+  border-bottom: 1px solid #ededed;
+  font-size: 24px;
+  font-weight: 300;
+  color: rgb(77, 77, 77);
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.CommentInput {
+  -webkit-font-smoothing: antialiased;
+  justify-content: center;
+  padding: 10px 25px;
+  border-bottom: 1px solid #ededed;
+  font-size: 24px;
+  font-weight: 300;
+  color: rgb(77, 77, 77);
+  -webkit-font-smoothing: antialiased;
+  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid #ededed;
+}
+
+.CommentList input {
+  padding: 10px 25px;
+  width: 90%;
+
+}
+
+
+.CommentList input::-webkit-input-placeholder {
+	font-style: italic;
+	font-weight: 300;
+	color: #e6e6e6;
+}
+
+.CommentList input::-moz-placeholder {
+	font-style: italic;
+	font-weight: 300;
+	color: #e6e6e6;
+}
+
+.CommentList input::input-placeholder {
+	font-style: italic;
+	font-weight: 300;
+	color: #e6e6e6;
+}
+
+.HashTag {
+  font-size: 1em;
+  padding: 5px;
+}

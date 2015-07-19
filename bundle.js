@@ -5,7 +5,150 @@ var React = require('react');
 var Parse = require('parse').Parse;
 var ParseReact = require('parse-react');
 
-Parse.initialize('key1', 'key2');
+Parse.initialize('DcSFCFl9R5SqfJhocbrClGDxbqRqCzbB4mQC9p2O', 'ViXIhVjF30UpnOejq2CBwgURR7czw00MBszWDOd9');
+
+var channelInquired = 'general';
+
+var AppContainer = React.createClass({
+  displayName: 'AppContainer',
+
+  render: function render() {
+    return React.createElement(
+      'div',
+      { className: 'AppContainer' },
+      React.createElement(ChannelBar, null),
+      React.createElement(CommentList, null)
+    );
+  }
+});
+
+var ChannelBar = React.createClass({
+  displayName: 'ChannelBar',
+
+  render: function render() {
+    return React.createElement(
+      'div',
+      { className: 'ChannelBar' },
+      React.createElement(
+        'div',
+        { className: 'HashTag' },
+        '#'
+      ),
+      React.createElement('input', {
+        placeholder: 'channelname',
+        onChange: this._onChange
+      })
+    );
+  },
+
+  _onChange: function _onChange(e) {
+    console.log(e.target.value);
+    var theChannel = e.target.value;
+    channelInquired = theChannel;
+    console.log(channelInquired);
+  }
+
+});
+
+var CommentBox = React.createClass({
+  displayName: 'CommentBox',
+
+  render: function render() {
+    return React.createElement(
+      'div',
+      { className: 'commentBox' },
+      React.createElement(CommentList, null)
+    );
+  }
+});
+
+var CommentList = React.createClass({
+  displayName: 'CommentList',
+
+  mixins: [ParseReact.Mixin],
+
+  observe: function observe() {
+    return {
+      comments: new Parse.Query('Comment').equalTo('channel', channelInquired).descending('createdAt')
+    };
+  },
+
+  render: function render() {
+
+    var commentNodes = this.data.comments.map(function (comment) {
+      return (
+        // <p key={comment.id}>{comment.info}</p>
+        React.createElement(Comment, { key: comment.id, info: comment.info })
+      );
+    });
+
+    return React.createElement(
+      'div',
+      { className: 'CommentList' },
+      React.createElement(CommentInput, null),
+      commentNodes
+    );
+  },
+
+  componentDidMount: function componentDidMount() {
+    var refresher = this.refreshQueries;
+    var interval = setInterval(function () {
+      console.log('refreshing');
+      refresher();
+    }, 3000);
+  }
+
+});
+
+var Comment = React.createClass({
+  displayName: 'Comment',
+
+  render: function render() {
+    return React.createElement(
+      'div',
+      { className: 'Comment' },
+      this.props.info
+    );
+  }
+});
+
+var CommentInput = React.createClass({
+  displayName: 'CommentInput',
+
+  render: function render() {
+    return React.createElement('input', {
+      className: 'CommentInput',
+      type: 'text',
+      placeholder: 'Enter a comment...',
+      submit: this.addComment,
+      onChange: this.onChange,
+      onKeyDown: this.onKeyDown,
+      maxLength: '80'
+    });
+  },
+
+  addComment: function addComment() {
+    // ParseReact.Mutation.Create("Coment")
+    ParseReact.Mutation.Create('Comment', { info: this.state.value, channel: channelInquired }).dispatch().then((function () {
+      console.log('refreshing');
+    }).bind(this));
+  },
+
+  onChange: function onChange(e) {
+    this.setState({
+      value: e.target.value
+    });
+  },
+
+  onKeyDown: function onKeyDown(e) {
+    if (e.keyCode === 13) {
+      this.addComment();
+      e.target.value = '';
+    }
+  }
+});
+
+React.render(React.createElement(AppContainer, null), document.getElementById('app'));
 
 },{"parse":22,"parse-react":3,"react":177}],2:[function(require,module,exports){
 // shim for using process in browser
