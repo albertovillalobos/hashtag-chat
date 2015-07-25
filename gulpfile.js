@@ -54,4 +54,4 @@ gulp.task('watch', function() {
   gulp.watch('style.css', ['reloadcss']);
 })
 
-gulp.task('default', ['webserver', 'watch']);
+gulp.task('default', ['webserver', 'watch', 'browserify']);
