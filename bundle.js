@@ -173,15 +173,22 @@ var Messages = React.createClass({
   },
 
   render: function render() {
-    // console.log('onRender: ',this.data.messages);
-    var messageNodes = this.data.messages.map(function (message) {
-      return React.createElement(
+    var messageNodes = [];
+    if (this.data.messages.length > 0) {
+      messageNodes = this.data.messages.map(function (message) {
+        return React.createElement(
+          'p',
+          { className: 'ChatMessage', key: message.id },
+          message.info
+        );
+      });
+    } else {
+      messageNodes = React.createElement(
         'p',
-        { className: 'ChatMessage', key: message.id },
-        message.info
+        { className: 'ChatMessage' },
+        'Chatroom empty :c'
       );
-    });
-
+    }
     return React.createElement(
       'div',
       null,

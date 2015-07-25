@@ -167,3 +167,7 @@ p.lead {
   border: none;
   height: auto;
 }
+
+.navbar {
+  border-radius: 0px;
+}

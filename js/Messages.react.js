@@ -22,13 +22,18 @@ var Messages = React.createClass({
   },
 
   render() {
-    // console.log('onRender: ',this.data.messages);
-    var messageNodes = this.data.messages.map(function (message) {
-      return (
-        <p className='ChatMessage' key={message.id}>{message.info}</p>
-      );
-    });
+    var messageNodes=[];
+    if (this.data.messages.length>0) {
+      messageNodes = this.data.messages.map(function (message) {
+        return (
+          <p className='ChatMessage' key={message.id}>{message.info}</p>
+        );
+      });
 
+    }
+    else {
+        messageNodes = <p className='ChatMessage'>Chatroom empty :c</p>
+    }
     return (
       <div>
         {messageNodes}
