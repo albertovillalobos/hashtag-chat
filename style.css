@@ -6,10 +6,28 @@ body {
   flex-direction: column;
 }
 
+h1, h2, h3, h4 {
+  font-weight: 300;
+  color: rgb(77, 77, 77);
+  -webkit-font-smoothing: antialiased;
+}
+#app, body, .row {
+  background-color: #f5f5f5;
+}
+
 
 .AppContainer {
   justify-content: center;
   /*box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);*/
+}
+
+p.lead {
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  /*border-radius: 5px;*/
+  /*border-bottom: solid black 1px;*/
+  border: solid black 1px
 }
 
 .ChannelBar {
@@ -94,19 +112,22 @@ body {
 }
 
 
-.CommentList input::-webkit-input-placeholder {
+.MessageContainer input::-webkit-input-placeholder {
+  font-size: 24px;
 	font-style: italic;
 	font-weight: 300;
 	color: #e6e6e6;
 }
 
-.CommentList input::-moz-placeholder {
+.MessageContainer input::-moz-placeholder {
+  font-size: 24px;
 	font-style: italic;
 	font-weight: 300;
 	color: #e6e6e6;
 }
 
-.CommentList input::input-placeholder {
+.MessageContainer input::input-placeholder {
+  font-size: 24px;
 	font-style: italic;
 	font-weight: 300;
 	color: #e6e6e6;
@@ -115,4 +136,34 @@ body {
 .HashTag {
   font-size: 1em;
   padding: 5px;
+}
+
+
+.MessageContainer {
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.ChatMessage {
+  padding: 10px 25px;
+  border-bottom: 1px solid #ededed;
+  font-size: 24px;
+  font-weight: 300;
+  color: rgb(77, 77, 77);
+  -webkit-font-smoothing: antialiased;
+  margin-bottom: 0px;
+}
+
+
+.MessageInput.form-control {
+  font-style: italic;
+  color: rgb(77, 77, 77);
+  -webkit-font-smoothing: antialiased;
+  margin-bottom: 0px;
+  font-size: 24px;
+  border: none;
+  height: auto;
 }

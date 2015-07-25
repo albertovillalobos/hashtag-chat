@@ -5,7 +5,11 @@ var Router = require('react-router');
 var Navigation = Router.Navigation;
 
 var NavBar = React.createClass({
-  mixins: [ Navigation ],
+  mixins: [ Navigation, ParseReact.Mixin ],
+
+  observe() {
+
+  },
 
   _submit(e) {
     console.log(e, 'submit');
@@ -22,7 +26,7 @@ var NavBar = React.createClass({
       }
       else {
         console.log('transitionTo',target);
-        this.transitionTo('/'+target);
+        this.transitionTo('/'+target,{channel: target});
       }
     }
   },
