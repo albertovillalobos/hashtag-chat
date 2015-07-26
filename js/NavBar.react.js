@@ -48,7 +48,7 @@ var NavBar = React.createClass({
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="/#/">Circus</a>
+              <a className="navbar-brand" href="/#/">Cirqus</a>
             </div>
             <div className="collapse navbar-collapse" id="js-navbar-collapse">
             <form className="navbar-form navbar-right" role="search">

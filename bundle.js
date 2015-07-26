@@ -75,7 +75,7 @@ var Index = React.createClass({
           React.createElement(
             'h1',
             { className: 'text-center' },
-            'Welcome to Circus'
+            'Welcome to Cirqus'
           ),
           React.createElement(
             'h2',
@@ -302,7 +302,7 @@ var NavBar = React.createClass({
             React.createElement(
               'a',
               { className: 'navbar-brand', href: '/#/' },
-              'Circus'
+              'Cirqus'
             )
           ),
           React.createElement(
