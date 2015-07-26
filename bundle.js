@@ -85,7 +85,30 @@ var Index = React.createClass({
           React.createElement(
             'h3',
             { className: 'text-center' },
-            'Type a channel name at the bar above to get started'
+            'Type a channel name at the bar above to get started, or check the featured rooms:'
+          )
+        )
+      ),
+      React.createElement(
+        'div',
+        { className: 'row ' },
+        React.createElement(
+          'div',
+          { className: 'col-sm-6 col-sm-offset-3 text-center' },
+          React.createElement(
+            'a',
+            { className: 'navbar-brand text-center', href: '/#/hackathonhackers' },
+            'hackathonhackers'
+          ),
+          React.createElement(
+            'a',
+            { className: 'navbar-brand text-center', href: '/#/hhcirquedutwerque' },
+            'hhcirquedutwerque'
+          ),
+          React.createElement(
+            'a',
+            { className: 'navbar-brand text-center', href: '/#/general' },
+            'general'
           )
         )
       )
