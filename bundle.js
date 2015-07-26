@@ -85,7 +85,7 @@ var Index = React.createClass({
           React.createElement(
             'h3',
             { className: 'text-center' },
-            'Type a channel name at the bar above to get started, or check the featured rooms:'
+            'Type a channel name at the bar above to get started, or check the featured channels:'
           )
         )
       ),
@@ -141,6 +141,8 @@ var MessageInput = React.createClass({
 
     var chatMessage = e.target.value;
     if (e.keyCode === 13) {
+
+      console.log('words:', chatMessage.trim().replace(' ', '').length, chatMessage);
       if (chatMessage.length > 100) {
         alert('Comment too long');
         e.target.value = '';
@@ -148,6 +150,9 @@ var MessageInput = React.createClass({
         alert('wait ' + cooldown + ' seconds to post again');
       } else if (chatMessage == previewsComment) {
         alert('Dont double post');
+        e.target.value = '';
+      } else if (chatMessage.trim().replace(' ', '').length < 1) {
+        alert('Invalid message');
         e.target.value = '';
       } else {
         previewsComment = chatMessage;
@@ -317,7 +322,6 @@ var NavBar = React.createClass({
                     className: 'form-control',
                     placeholder: 'Channel Name',
                     refs: 'search',
-                    type: 'text',
                     submit: this._submit,
                     onChange: this._change,
                     onKeyDown: this._keyDown,

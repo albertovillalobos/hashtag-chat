@@ -20,6 +20,8 @@ var MessageInput = React.createClass({
 
     var chatMessage = e.target.value;
     if (e.keyCode === 13) {
+
+      console.log('words:',chatMessage.trim().replace(' ','').length, chatMessage);
       if (chatMessage.length > 100) {
         alert('Comment too long');
          e.target.value = '';
@@ -29,6 +31,10 @@ var MessageInput = React.createClass({
       }
       else if (chatMessage == previewsComment) {
         alert('Dont double post');
+         e.target.value = '';
+      }
+      else if (chatMessage.trim().replace(' ','').length < 1) {
+        alert('Invalid message');
          e.target.value = '';
       }
       else {

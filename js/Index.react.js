@@ -21,7 +21,7 @@ var Index = React.createClass({
           <div className="col-lg-12">
             <h1 className="text-center">Welcome to Circus</h1>
             <h2 className="text-center">Channel Based Anonymous Chatrooms</h2>
-            <h3 className="text-center">Type a channel name at the bar above to get started, or check the featured rooms:</h3>
+            <h3 className="text-center">Type a channel name at the bar above to get started, or check the featured channels:</h3>
           </div>
         </div>
         <div className="row ">

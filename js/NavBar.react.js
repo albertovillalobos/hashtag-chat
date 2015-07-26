@@ -59,7 +59,6 @@ var NavBar = React.createClass({
                     className="form-control"
                     placeholder="Channel Name"
                     refs="search"
-                    type="text"
                     submit={this._submit}
                     onChange={this._change}
                     onKeyDown={this._keyDown}
