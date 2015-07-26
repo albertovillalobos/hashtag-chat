@@ -80,7 +80,7 @@ var Index = React.createClass({
           React.createElement(
             'h2',
             { className: 'text-center' },
-            'Channel Based Anonymous Chatroom Channels'
+            'Channel Based Anonymous Chatrooms'
           ),
           React.createElement(
             'h3',
