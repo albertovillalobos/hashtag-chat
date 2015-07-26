@@ -171,3 +171,10 @@ p.lead {
 .navbar {
   border-radius: 0px;
 }
+
+
+.ChatMessage {
+  word-wrap: break-word;
+
+
+}
