@@ -214,11 +214,21 @@ var Messages = React.createClass({
     var messageNodes = [];
     if (this.data.messages.length > 0) {
       messageNodes = this.data.messages.map(function (message) {
-        return React.createElement(
-          'p',
-          { className: 'ChatMessage', key: message.id },
-          message.info
-        );
+
+        if (message.info.charAt(0) === '>') {
+          console.log('greentext!');
+          return React.createElement(
+            'p',
+            { className: 'ChatMessage greentext', key: message.id },
+            message.info
+          );
+        } else {
+          return React.createElement(
+            'p',
+            { className: 'ChatMessage ', key: message.id },
+            message.info
+          );
+        }
       });
     } else {
       messageNodes = React.createElement(

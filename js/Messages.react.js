@@ -25,9 +25,18 @@ var Messages = React.createClass({
     var messageNodes=[];
     if (this.data.messages.length>0) {
       messageNodes = this.data.messages.map(function (message) {
-        return (
-          <p className='ChatMessage' key={message.id}>{message.info}</p>
-        );
+
+        if (message.info.charAt(0) === '>') {
+          console.log('greentext!');
+          return (
+            <p className='ChatMessage greentext' key={message.id}>{message.info}</p>
+          );          
+        }
+        else {
+          return (
+            <p className='ChatMessage ' key={message.id}>{message.info}</p>
+          );
+        }
       });
 
     }
