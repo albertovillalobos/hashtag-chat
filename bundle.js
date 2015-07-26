@@ -133,7 +133,7 @@ var MessageInput = React.createClass({
 
         cooldown = 5;
 
-        ParseReact.Mutation.Create('Message', { info: chatMessage, channel: this.props.channel }).dispatch();
+        ParseReact.Mutation.Create('Message', { info: chatMessage, channel: this.props.channel.toLowerCase() }).dispatch();
         e.target.value = '';
       }
     }
@@ -170,7 +170,7 @@ var Messages = React.createClass({
   observe: function observe(props, state) {
     console.log('observe params: ', props);
     return {
-      messages: new Parse.Query('Message').equalTo('channel', props.channel).descending('createdAt')
+      messages: new Parse.Query('Message').equalTo('channel', props.channel.toLowerCase()).descending('createdAt')
     };
   },
 

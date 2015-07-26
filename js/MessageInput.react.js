@@ -38,7 +38,7 @@ var MessageInput = React.createClass({
 
         cooldown  = 5;
 
-        ParseReact.Mutation.Create('Message', { info: chatMessage, channel: this.props.channel }).dispatch()
+        ParseReact.Mutation.Create('Message', { info: chatMessage, channel: this.props.channel.toLowerCase() }).dispatch()
          e.target.value = '';
 
       }

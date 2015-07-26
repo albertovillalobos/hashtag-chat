@@ -9,7 +9,7 @@ var Messages = React.createClass({
   observe: function(props, state) {
     console.log('observe params: ', props);
     return {
-      messages: (new Parse.Query('Message').equalTo('channel',props.channel).descending("createdAt"))
+      messages: (new Parse.Query('Message').equalTo('channel',props.channel.toLowerCase()).descending("createdAt"))
     };
   },
 
