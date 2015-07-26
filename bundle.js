@@ -75,7 +75,17 @@ var Index = React.createClass({
           React.createElement(
             'h1',
             { className: 'text-center' },
-            'Welcome'
+            'Welcome to Circus'
+          ),
+          React.createElement(
+            'h2',
+            { className: 'text-center' },
+            'Channel Based Anonymous Chatroom Channels'
+          ),
+          React.createElement(
+            'h3',
+            { className: 'text-center' },
+            'Type a channel name at the bar above to get started'
           )
         )
       )
@@ -264,7 +274,7 @@ var NavBar = React.createClass({
             React.createElement(
               'a',
               { className: 'navbar-brand', href: '/#/' },
-              'HashCat'
+              'Circus'
             )
           ),
           React.createElement(
@@ -282,7 +292,7 @@ var NavBar = React.createClass({
                   React.createElement('input', {
                     type: 'text',
                     className: 'form-control',
-                    placeholder: 'Search chats',
+                    placeholder: 'Channel Name',
                     refs: 'search',
                     type: 'text',
                     submit: this._submit,

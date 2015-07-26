@@ -48,7 +48,7 @@ var NavBar = React.createClass({
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="/#/">HashCat</a>
+              <a className="navbar-brand" href="/#/">Circus</a>
             </div>
             <div className="collapse navbar-collapse" id="js-navbar-collapse">
             <form className="navbar-form navbar-right" role="search">
@@ -57,7 +57,7 @@ var NavBar = React.createClass({
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="Search chats"
+                    placeholder="Channel Name"
                     refs="search"
                     type="text"
                     submit={this._submit}
