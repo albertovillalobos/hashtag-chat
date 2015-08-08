@@ -182,3 +182,10 @@ p.lead {
 .greentext {
   color: #32CD32;
 }
+
+.timestamp {
+  color: gray;
+  font-size: 10px;
+  /*float: right;*/
+  display: block;
+}

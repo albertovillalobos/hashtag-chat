@@ -8,7 +8,7 @@ var MessageInput = require('./MessageInput.react.js');
 var ChatBox = React.createClass({
 
   render() {
-    console.log('ChatBox params:',this.props.params.id);
+    // console.log('ChatBox params:',this.props.params.id);
     return (
       <div className="container">
         <div className="row">
