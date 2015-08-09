@@ -27,7 +27,7 @@ var Messages = React.createClass({
           return (
             <p className='ChatMessage greentext' key={message.id}>
               {message.info}
-              <span className="timestamp">{message.createdAt}</span>
+              <span className="timestamp">{message.createdAt.toString()}</span>
             </p>
           );
         }

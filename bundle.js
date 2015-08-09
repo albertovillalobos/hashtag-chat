@@ -220,7 +220,7 @@ var Messages = React.createClass({
             React.createElement(
               'span',
               { className: 'timestamp' },
-              message.createdAt
+              message.createdAt.toString()
             )
           );
         } else {
