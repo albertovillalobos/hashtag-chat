@@ -5,6 +5,8 @@ var connect = require('gulp-connect');
 var watch = require('gulp-watch');
 var babelify = require('babelify');
 var uglify = require('gulp-uglify');
+var buffer = require('vinyl-buffer');
+
 
 
 gulp.task('webserver', function() {
@@ -17,14 +19,10 @@ gulp.task('webserver', function() {
 gulp.task('browserify', function() {
 
     return browserify('./js/app.js').transform(babelify).bundle()
-
-        // vinyl-source-stream makes the bundle compatible with gulp
-        .pipe(source('bundle.js')) // Desired filename
-        // Output the file
+        .pipe(source('bundle.js'))
+        .pipe(buffer())
+        .pipe(uglify())
         .pipe(gulp.dest('./'))
-
-
-
 });
 
 
